@@ -12,5 +12,10 @@ public class CLient Test {
     client = new Client("Taraji", "Sunflower blonde color, every 6 months", 1);
   }
 
+  @Test
+  public void client_instantiatesCorrectly_true() {
+    assertEquals(true, client instanceof Client);
+  }
+
   
 }
