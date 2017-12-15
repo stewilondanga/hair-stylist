@@ -44,5 +44,11 @@ public class CLient Test {
     assertTrue(client.equals(secondClient));
   }
 
+  @Test
+  public void getId_returnsIdOfClient_true() {
+    client.save();
+    assertTrue(client.getId() > 0);
+  }
+
   
 }
