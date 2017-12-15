@@ -86,5 +86,13 @@ public class CLient Test {
     assertEquals("A new style, don't care what", Client.find(client.getId()).getDescription());
   }
 
+  @Test
+  public void delete_deletesClient_true() {
+    client.save();
+    int clientId = client.getId();
+    client.delete();
+    assertEquals(null, Client.find(clientId));
+  }
+
   
 }
