@@ -103,5 +103,13 @@ public class StylistTest {
     assertEquals(null, Stylist.find(stylistId));
   }
 
-  
+  @Test
+  public void getUnassociatedClients_retrievesListOfClientsWhoseStylistIdsAreZero_true() {
+    stylist.save();
+    Client client = new CLient("Boxer", "Bowlcut trim every 2 weeks", stylist.getId());
+    client.save();
+    stylist.delete();
+    assertTrue(Stylist.getUnassociatedClients().contains(client));
+  }
+
 }
