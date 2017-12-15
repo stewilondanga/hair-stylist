@@ -88,5 +88,12 @@ public class StylistTest {
     assertEquals("Alicia", Stylist.find(stylist.getId()).getName());
   }
 
+  @Test
+  public void updateDescription_updatesStylistDescription_true() {
+    stylist.save();
+    stylist.updateDescription("Blunt bangs");
+    assertEquals("Blunt bangs", Stylist.find(stylist.getId()).getDescription());
+  }
+
   
 }
