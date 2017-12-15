@@ -36,5 +36,16 @@ public class StylistTest {
     assertTrue(stylist.equals(secondStylist));
   }
 
+  @Test
+  public void save_saveObjectToDatabase_true(){
+    stylist.save();
+    String sql = "SELECT * FROM stylists WHERE name='Tyra'";
+    Stylist secondStylist;
+    try(Connection con = DB.sql2o.open()){
+      secondStylist = con.createQuery(sql).executeAndFetchFirst(Stylist.class);
+    }
+    assertTrue(stylist.equals(secondStylist));
+  }
+
   
 }
