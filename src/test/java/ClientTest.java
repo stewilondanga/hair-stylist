@@ -22,5 +22,10 @@ public class CLient Test {
     assertEquals("Taraji", client.getName());
   }
 
+  @Test
+  public void getDescription_returnsDescriptionOfClient_String() {
+    assertEquals("Sunflower blonde color, every 6 months", client.getDescription());
+  }
+
   
 }
