@@ -95,5 +95,13 @@ public class StylistTest {
     assertEquals("Blunt bangs", Stylist.find(stylist.getId()).getDescription());
   }
 
+  @Test
+  public void delete_deleteStylist_true() {
+    stylist.save();
+    int stylistId = stylist.getId();
+    stylist.delete();
+    assertEquals(null, Stylist.find(stylistId));
+  }
+
   
 }
