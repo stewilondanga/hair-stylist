@@ -25,5 +25,10 @@ public class StylistTest {
     assertEquals("Tyra", stylist.getName());
   }
 
+  @Test
+  public void getDescription_returnsDescriptionOfStylist_String() {
+    assertEquals("Straightforward, elegant style", stylist.getDescription());
+  }
+
   
 }
