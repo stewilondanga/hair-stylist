@@ -33,5 +33,16 @@ public class CLient Test {
     assertTrue(client.equals(secondClient));
   }
 
+  @Test
+  public void save_saveObjectToDatabase_true(){
+    client.save();
+    String sql = "SELECT * FROM clients WHERE name='Taraji'";
+    Client secondClient;
+    try(Connection con = DB.sql2o.open()){
+      secondClient = con.createQuery(sql).executeAndFetchFirst(Client.class);
+    }
+    assertTrue(client.equals(secondClient));
+  }
+
   
 }
