@@ -79,5 +79,12 @@ public class CLient Test {
     assertEquals("Yogi", Client.find(client.getId()).getName());
   }
 
+  @Test
+  public void update_updatesDescriptionForClient_true() {
+    client.save();
+    client.updateDescription("A new style, don't care what");
+    assertEquals("A new style, don't care what", Client.find(client.getId()).getDescription());
+  }
+
   
 }
