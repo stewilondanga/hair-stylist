@@ -27,5 +27,11 @@ public class CLient Test {
     assertEquals("Sunflower blonde color, every 6 months", client.getDescription());
   }
 
+  @Test
+  public void equals_returnsTrueIfPropertiesAreTheSame_true() {
+    Client secondClient = new Client("Taraji", "Sunflower blonde color, every 6 months", 1);
+    assertTrue(client.equals(secondClient));
+  }
+
   
 }
