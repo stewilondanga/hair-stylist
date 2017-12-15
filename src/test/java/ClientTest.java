@@ -17,5 +17,10 @@ public class CLient Test {
     assertEquals(true, client instanceof Client);
   }
 
+  @Test
+  public void getName_returnsNameOfClient_String() {
+    assertEquals("Taraji", client.getName());
+  }
+
   
 }
