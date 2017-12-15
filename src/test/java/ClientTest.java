@@ -94,5 +94,12 @@ public class CLient Test {
     assertEquals(null, Client.find(clientId));
   }
 
-  
+  @Test
+  public void updateStylist_updatesClientsAssignedStylistInDatabase_int() {
+    client.save();
+    Stylist stylist = new Stylist("Tyra", "Straightforward, elegant style");
+    client.updateStylist(stylist.getId());
+    assertEquals(stylist.getId(), Client.find(client.getId()).getStylistId());
+  }
+
 }
