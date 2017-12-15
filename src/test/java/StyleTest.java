@@ -30,5 +30,11 @@ public class StylistTest {
     assertEquals("Straightforward, elegant style", stylist.getDescription());
   }
 
+  @Test
+  public void equals_returnsTrueIfPropertiesAreTheSame_true() {
+    Stylist secondStylist = new Stylist("Tyra", "Straightforward, elegant style");
+    assertTrue(stylist.equals(secondStylist));
+  }
+
   
 }
