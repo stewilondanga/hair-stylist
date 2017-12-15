@@ -12,7 +12,13 @@ public class StylistTest {
 
   @Before
   public void setUp(){
-    stylist = new Stylist("Alice", "Straightforward, elegant style");
+    stylist = new Stylist("Tyra", "Straightforward, elegant style");
   }
+
+  @Test
+  public void stylist_instantiatesCorrectly_true() {
+    assertTrue(stylist instanceof Stylist);
+  }
+
   
 }
