@@ -7,5 +7,10 @@ public class CLient Test {
   @Rule
   public DatabaseRule database = new DatabaseRule();
 
+  @Before
+  public void setUp(){
+    client = new Client("Taraji", "Sunflower blonde color, every 6 months", 1);
+  }
+
   
 }
