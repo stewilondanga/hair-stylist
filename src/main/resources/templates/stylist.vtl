@@ -5,3 +5,16 @@
   <h4><a href="/stylist.getId()/update">Edit $stylist.getName()</a></h4>
   <hr>
 </div>
+
+#if($success-add)
+  <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    $success-add's info has been added. -Tyra
+  </div>
+#end
+#if($success-edit)
+<div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  $success-edits's info has been updated. -Taraji
+</div>
+#end
