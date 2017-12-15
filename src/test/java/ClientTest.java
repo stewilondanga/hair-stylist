@@ -72,5 +72,12 @@ public class CLient Test {
     assertEquals(1, client.getStylistId());
   }
 
+  @Test
+  public void update_updatesNameForClient_true() {
+    client.save();
+    client.updateName("Yogi");
+    assertEquals("Yogi", Client.find(client.getId()).getName());
+  }
+
   
 }
