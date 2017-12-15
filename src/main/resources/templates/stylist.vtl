@@ -18,3 +18,18 @@
   $success-edits's info has been updated. -Taraji
 </div>
 #end
+
+
+<h1>Client List</h1>
+<h3><a href="/stylist/$stylist.getId()/client/new">Add Client</a></h3>
+<hr>
+<div class="row">
+  #for each ($client in $clients)
+    <div class="col-sm-4">
+      <ul>
+        <li><h4>$client.getName()</a></h4></li>
+        <li>Requests | $client/$client.getId()/update $client.getName()'s Details</a></li>
+      </ul>
+    </div>
+  #end
+</div>
