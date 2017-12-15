@@ -47,5 +47,11 @@ public class StylistTest {
     assertTrue(stylist.equals(secondStylist));
   }
 
+  @Test
+  public void getId_returnsIdOfStylist_true() {
+    stylist.save();
+    assertTrue(stylist.getId() > 0);
+  }
+
   
 }
