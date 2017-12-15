@@ -67,5 +67,10 @@ public class CLient Test {
     assertEquals(Client.find(secondClient.getId()), secondClient);
   }
 
+  @Test
+  public void getStylistId_returnsStylistId_int() {
+    assertEquals(1, client.getStylistId());
+  }
+
   
 }
