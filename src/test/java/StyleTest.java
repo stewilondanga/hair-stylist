@@ -53,5 +53,14 @@ public class StylistTest {
     assertTrue(stylist.getId() > 0);
   }
 
+  @Test
+  public void all_returnsAllInstancesOfStylist_true(){
+    stylist.save();
+    Stylist secondStylist = new Stylist("Hulk", "Specializes in wavy layers");
+    secondStylist.save();
+    assertTrue(Stylist.all().contains(stylist));
+    assertTrue(Stylist.all().contains(secondStylist));
+  }
+
   
 }
