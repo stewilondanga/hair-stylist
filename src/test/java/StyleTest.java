@@ -62,5 +62,11 @@ public class StylistTest {
     assertTrue(Stylist.all().contains(secondStylist));
   }
 
-  
+  @Test
+  public void find_returnsStylistWithSameId_secondStylist() {
+    stylist.save();
+    Stylist secondStylist = new Stylist("Hulk", "Specializes in wavy layers");
+    secondStylist.save();
+    assertEquals(Stylist.find(secondStylist.getId()), secondStylist);
+  }
 }
