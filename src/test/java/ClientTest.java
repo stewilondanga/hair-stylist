@@ -50,5 +50,14 @@ public class CLient Test {
     assertTrue(client.getId() > 0);
   }
 
+  @Test
+  public void all_returnsAllInstancesOfCLient_true(){
+    client.save();
+    Client secondClient = new Client("Arrow", "Raven black hair, every 1 month, likes a lot of gel", 2);
+    secondClient.save();
+    assertTrue(Client.all().contains(client));
+    assertTrue(Client.all().contains(secondClient));
+  }
+
   
 }
