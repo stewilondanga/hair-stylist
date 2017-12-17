@@ -34,5 +34,16 @@ public class Stylist {
     }
   }
 
+  public void save(){
+    String sql = "INSERT INTO stylists (name, description) VALUES (:name, :description)";
+    try(Connection con = DB.sql2o.open()){
+      this.id = (int) con.createQuery(sql, true)
+        .addParameter("name", this.name)
+        .addParameter("description", this.description)
+        .executeUpdate()
+        .getKey();
+    }
+  }
+
   
 }
