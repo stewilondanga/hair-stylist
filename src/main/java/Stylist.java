@@ -7,5 +7,10 @@ public class Stylist {
   private String description;
   private int id;
 
+  public Stylist(String name, String description) {
+    this.name = name;
+    this.description = description;
+  }
+
   
 }
