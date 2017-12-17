@@ -16,5 +16,9 @@ public class Stylist {
     return name;
   }
 
+  public String getDescription() {
+    return description;
+  }
+
   
 }
