@@ -20,5 +20,9 @@ public class Stylist {
     return description;
   }
 
+  public int getId() {
+    return id;
+  }
+
   
 }
