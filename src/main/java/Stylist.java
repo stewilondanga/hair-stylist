@@ -12,5 +12,9 @@ public class Stylist {
     this.description = description;
   }
 
+  public String getName() {
+    return name;
+  }
+
   
 }
