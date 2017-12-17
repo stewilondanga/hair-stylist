@@ -91,5 +91,14 @@ public class Stylist {
     }
   }
 
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+    String sql = "UPDATE clients SET stylist_id=0 WHERE stylist_id=:id; DELETE FROM stylists WHERE id=:id;";
+    con.createQuery(sql)
+      .addParameter("id", this.id)
+      .executeUpdate();
+    }
+  }
+
   
 }
