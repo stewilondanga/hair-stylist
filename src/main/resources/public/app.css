@@ -1,3 +1,27 @@
 #scissors {
   width: 50px;
 }
+
+.row {
+  background: #F7BA7C;
+  text-align: center;
+  padding: 5%;
+}
+
+h1, h2, h4 {
+  text-align:center;
+  font-family: Courier;
+}
+
+h3, p, label, button, li {
+  text-align: center;
+  font-family: Courier;
+}
+
+.add-client {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
