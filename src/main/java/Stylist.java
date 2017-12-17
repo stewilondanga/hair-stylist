@@ -100,5 +100,14 @@ public class Stylist {
     }
   }
 
-  
+  public static List<Client> getUnassociatedClients(){
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM clients WHERE stylist_id=0";
+      return con.createQuery(sql)
+        .executeAndFetch(Client.class);
+    }
+  }
+
+
+
 }
