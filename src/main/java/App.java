@@ -65,6 +65,12 @@ public class App {
       return null;
     });
 
+    get("/stylist/new", (request, response) -> {
+      Map<String, Object> model = newHashMap<String, Object>();
+      model.put("template", "templates/stylist-form.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     
   }
 }
