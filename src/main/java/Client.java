@@ -30,5 +30,15 @@ public class Client {
     return stylist_id;
   }
 
+  @Override
+  public boolean equals(Object otherClient) {
+    if (!(otherClient instanceof Client)) {
+      return false;
+    } else {
+      Client newClient = (Client) otherClient;
+      return this.getName().equals(newClient.getName()) && this.getDescription().equals(newClient.getDescription());
+    }
+  }
+
   
 }
