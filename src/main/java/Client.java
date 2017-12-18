@@ -18,5 +18,9 @@ public class Client {
     return name;
   }
 
+  public String getDescription() {
+    return description;
+  }
+
   
 }
