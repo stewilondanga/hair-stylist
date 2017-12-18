@@ -43,6 +43,19 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    post("/stylist/:id/update", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Stylist stylist = Stylist.find(Integer.parseInt(request.params("id")));
+      String description = request.queryParams("description");
+      stylist.updateDescription(description);
+      String name = request.queryParams("name");
+      stylist.updateName(name);
+      model.put("success-edit", stylist.getName());
+      String url = String.format("/stylist/%d", stylist.getId());
+      response.redirect(url);
+      return null;
+    });
+
     
   }
 }
