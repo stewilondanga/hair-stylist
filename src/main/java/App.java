@@ -56,6 +56,15 @@ public class App {
       return null;
     });
 
+    post("/stylist/:id/delete", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Stylist stylist = Stylist.find(Integer.parseInt(request.params("id")));
+      stylist.delete();
+      String url = String.format("/");
+      response.redirect(url);
+      return null;
+    });
+
     
   }
 }
