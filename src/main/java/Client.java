@@ -8,5 +8,11 @@ public class Client {
   private int id;
   private int stylist_id;
 
+  public Client(String name, String description, int stylist_id) {
+    this.name = name;
+    this.description = description;
+    this.stylist_id = stylist_id;
+  }
+
   
 }
