@@ -52,5 +52,12 @@ public class Client {
     }
   }
 
+  public static List<Client> all(){
+    String sql = "SELECT * FROM clients";
+    try(Connection con = DB.sql2o.open()){
+      return con.creatQuery(sql).executeAndFetch(Client.class);
+    }
+  }
+
   
 }
