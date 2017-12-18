@@ -22,5 +22,13 @@ public class Client {
     return description;
   }
 
+  public int getId() {
+    return id;
+  }
+
+  public int getStylistId() {
+    return stylist_id;
+  }
+
   
 }
