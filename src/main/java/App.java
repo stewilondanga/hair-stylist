@@ -117,6 +117,21 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    post("/client/:id/update", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Client client = Client.find(Integer.parseInt(request.params("id")));
+      String description = request.queryParams("description");
+      String name = request.queryParams("name");
+      int stylistId = Integer.parseInt(request.queryParams("stylistId"));
+      Stylist stylist = Stylist.find(client.getStylistId());
+      client.updateDescription(description);
+      client.updateName(name);
+      client.updateStylist(stylistId);
+      String url = String.format("/stylist/%d", stylistId);
+      response.redirect(url);
+      return null;
+    });
+
     
   }
 }
